@@ -9,6 +9,14 @@ import requests
 import threading
 
 # TO DO 
+
+#0 ) 
+# Get next pages faster  
+# The current version goes to page 1. Collects all jobs here. Then presses the next buttom, goes to the next page.
+# producer_jobs is slow can be improved a lot
+# Current best approach is to keep 2 threads. 1 thread on even numbers and 1 on odd numbers and iterate each thread 
+# by 2 pages instead of going to the next page.
+
 # 1) Handle bad requests.
 # 2) Span multiple processes for each job category.
 # 3) In case of job already existing ignore it.
@@ -184,7 +192,7 @@ class Scrapper:
 if __name__ == '__main__':
     # 22 - > 14.27sec
     # 110 - > Must take(71.35) and took (~ 50)
-    new_scrapper = Scrapper(110)
+    new_scrapper = Scrapper(10)
 
     start_time = time.time()
     new_scrapper.scrape_job_board()
