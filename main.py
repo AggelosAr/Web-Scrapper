@@ -11,6 +11,7 @@ import threading
 # 1) To do : handle bad requests
 # 2) To do : Span multiple processes for each job category.
 # 3) In case of job already existing ignore it 
+# 4) Add auutomatic summmarization for job descriptions.
 
 class Scrapper:
     
@@ -55,7 +56,6 @@ class Scrapper:
         # We will take only 1 category of jobs. The first category in top#20
         random_job_board = top_20_job_boards[0]
         category, url = random_job_board[0], random_job_board[1]
-
 
         sentinels_needed = theads_needed
         producer_thread = threading.Thread(target = self.producer_jobs, args=(category, url, sentinels_needed))
@@ -131,6 +131,7 @@ class Scrapper:
         
         return urls, next_page_url
         
+
     # Scrapes all the necessary information of the current job posting.
     # Adds it to the appropriate category.
     # Assumes there are no 2 same job postings. Else updates the old one.
@@ -209,5 +210,4 @@ if __name__ == '__main__':
     print("TOTAL SCRAPED : ", len(new_scrapper.unique_jobs))
     print("Names : ")
     print(new_scrapper.unique_jobs)
-    
-    
+  
