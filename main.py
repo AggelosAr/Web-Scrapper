@@ -8,10 +8,14 @@ import requests
 
 import threading
 
-# 1) To do : handle bad requests
-# 2) To do : Span multiple processes for each job category.
-# 3) In case of job already existing ignore it 
-# 4) Add auutomatic summmarization for job descriptions.
+# TO DO 
+# 1) Handle bad requests.
+# 2) Span multiple processes for each job category.
+# 3) In case of job already existing ignore it.
+# 4) Add automatic summmarization for job descriptions.
+# 5) Allow user to search for a specific job title.
+# 6) Scrape everything. Same as 2)
+
 
 class Scrapper:
     
