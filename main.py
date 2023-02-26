@@ -38,7 +38,7 @@ class Scrapper:
         # Option 1) 5 jobs for each cat or 
         # Option 2) 100 for each
         # Option 3) time limit them
-        # Option 3) let them run for a fixed amount of time or instead of demanding a number.
+        # Option 3) let them run for a fixed amount of time instead of demanding a number.
         """
         top_20_job_boards = self.get_job_boards()
         all_qs = [ queue.Queue() for _ in range(len(top_20_job_boards)) ]
